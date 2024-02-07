@@ -8,7 +8,24 @@ public class ListNode {
     // characteristics of ListNode represents information about a person in
     // the phone book.
 
-    ListNode nexListNode; // reference to the next node in the linked list 
+    ListNode nextListNode; // reference to the next node in the linked list 
+    
+
+    ListNode(String firstNameGiven, String lastNameGiven, String cityGiven, int addressGiven
+    , int phoneNumberGiven, ListNode nexListNodeGiven){
+
+        this.firstName = firstNameGiven; // initialize characteristics for new node
+        this.lastName = lastNameGiven;
+        this.city = cityGiven;
+        this.address = addressGiven;
+        this.phoneNumber = phoneNumberGiven;
+
+        this.nextListNode = nexListNodeGiven; // initialize reference to next
+        // ListNode if null this is last ListNode in List if value then this
+        //ListNode is inserted into List before position of nextListNode
+
+    }// end ListNode constructor
+
 
     public String getCharacteristicString(char type) {
         //method to return characteristics of node of type String takes type
@@ -32,6 +49,7 @@ public class ListNode {
 
     } // end getCharacteristicString()
 
+
     public int getCharacteristicInt(char type) {
         //method to return characteristics of ListNode of type int takes type
         // to determine which characteristic and returns int representing
@@ -50,6 +68,7 @@ public class ListNode {
         return address;
 
     } // end getCharacteristicInt()
+
 
     public void setCharacteristic(char type, String valueString, int valueInt) {
 
@@ -77,5 +96,6 @@ public class ListNode {
 
 
     } // end setCharacteristic()
+
 
 }// end ListNode

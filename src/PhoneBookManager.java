@@ -1,7 +1,14 @@
 public class PhoneBookManager {
-    
-    public ListNode get(int index) {
 
+    private ListNode head;
+
+    private ListNode CurrentListNode;
+
+    PhoneBookManager()
+    
+    public ListNode findLastListNode(int index) {
+        
+        CurrentListNode = head;
         
     }
 
@@ -9,11 +16,22 @@ public class PhoneBookManager {
 
     }
 
-    public void setEnd(ListNode person){
+    public void insert(String firstNameGiven, String lastNameGiven, String cityGiven
+    , int addressGiven, int phoneNumberGiven, ListNode ListtNodeGiven){
+    
+    ListNode newNode = new ListNode(firstNameGiven, lastNameGiven, cityGiven
+    , addressGiven, phoneNumberGiven, ListtNodeGiven);
+
+
+
 
     }
 
-    public void setBeginning(ListNode person){
+    public void insertHead(ListNode person){
+
+    }
+
+    public void insertTail(ListNode person){
 
     }
 
