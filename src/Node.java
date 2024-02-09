@@ -17,6 +17,12 @@ public class Node {
 
     }// end ListNode constructor
 
+    public void setPerson(Person personGiven) { // returns person object.
+
+        this.person = personGiven;
+       
+    } 
+
 
     public Person getPerson() { // returns person object.
 
@@ -30,9 +36,9 @@ public class Node {
 
     }
 
-    public void setNextNode(Node nextNode) { //used to modify position of node in list
+    public void setNextNode(Node nextNodeGiven) { //used to modify position of node in list
 
-        this.nextNode = nextNode;
+        this.nextNode = nextNodeGiven;
 
     }
 

@@ -15,14 +15,40 @@ public class Menu {
 
         } else if(inputChar == 's') { // print formatted word search
 
-            System.out.printf("%s%n", "Please enter the index to search for");
+            System.out.printf("%s%n", "Please enter an int representing the index to search for");
 
+            int index = input.nextInt();
 
-            printPerson(phoneBook.getIndexNode());
+            printPerson(phoneBook.getIndexNode(index).getPerson());
 
-        } else if(inputChar == 's') { //print formatted solution
+        } else if(inputChar == 'm') { //print formatted solution
 
-            print(MyObjects,'s');
+            System.out.printf("%s%n", "Please enter an int representing the index of person to modify");
+
+            int index = input.nextInt();
+
+            System.out.printf("%s%n%s%n%s%n%s%n", "To modify first name please enter (f)", "To modify last name please enter (l)"
+            , "To modify city please enter (c)", "To modify address please enter (a)", "To modify phone number please enter (n)");
+            input.nextLine();
+
+            char inputCharNew = Character.toLowerCase(input.next().charAt(0));
+
+            System.out.print( "please enter a new value: ");
+
+            input.nextLine();
+            String inputString = input.nextLine();
+
+            if(inputCharNew =='f') {
+                
+                Node node = phoneBook.getIndexNode(index);
+
+                Person person = node.getPerson();
+
+                Person newPerson = person.setCharacteristic(inputCharNew,inputString);
+                
+                node.setPerson(newPerson);
+            }
+                
 
         } else if(inputChar == 'q') {
             quit();
@@ -32,11 +58,11 @@ public class Menu {
 
     public static void welcome () { // welcome menu for opening program
 
-        System.out.printf("%s%n%s%n", "Welcome to my phone book!");
+        System.out.printf("%s%n", "Welcome to my phone book!");
 
     }
 
-    public static char main(PhoneBookManager phoneBook){ // main menu runs in while loop
+    public static void main(PhoneBookManager phoneBook){ // main menu runs in while loop
 
         System.out.printf("%s%n%s%n%s%n%s%n%s", "Please select an option:"
             , "add a new person (p)", "Search for a person (s)"
@@ -45,7 +71,7 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         char inputChar = Character.toLowerCase(input.next().charAt(0));
 
-        return inputChar;
+        selector(inputChar, phoneBook);
 
     }
 

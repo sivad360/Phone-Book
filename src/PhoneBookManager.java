@@ -19,8 +19,17 @@ public class PhoneBookManager {
 
     }
 
-    public Person getIndexNode(int index) {
-        
+    public Node getIndexNode(int index) {
+
+        Node newNode = this.head;
+
+        for(int i = 0; i < index; i ++) {
+
+            newNode = newNode.nextNode;
+
+        }
+
+        return newNode;
         
     }
 
