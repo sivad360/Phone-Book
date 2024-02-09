@@ -21,13 +21,13 @@ public class Menu {
 
             printPerson(phoneBook.getIndexNode(index).getPerson());
 
-        } else if(inputChar == 'm') { //print formatted solution
+        } else if(inputChar == 'm') { // modify a person in the phone book
 
             System.out.printf("%s%n", "Please enter an int representing the index of person to modify");
 
             int index = input.nextInt();
 
-            System.out.printf("%s%n%s%n%s%n%s%n", "To modify first name please enter (f)", "To modify last name please enter (l)"
+            System.out.printf("%s%n%s%n%s%n%s%n%s%n", "To modify first name please enter (f)", "To modify last name please enter (l)"
             , "To modify city please enter (c)", "To modify address please enter (a)", "To modify phone number please enter (n)");
             input.nextLine();
 
@@ -37,18 +37,27 @@ public class Menu {
 
             input.nextLine();
             String inputString = input.nextLine();
-
-            if(inputCharNew =='f') {
                 
-                Node node = phoneBook.getIndexNode(index);
+            Node node = phoneBook.getIndexNode(index);
 
-                Person person = node.getPerson();
+            Person person = node.getPerson();
 
-                Person newPerson = person.setCharacteristic(inputCharNew,inputString);
+            Person newPerson = person.setCharacteristic(inputCharNew,inputString);
+            
+            node.setPerson(newPerson);
                 
-                node.setPerson(newPerson);
-            }
-                
+        } else if(inputChar =='i') {
+
+            System.out.printf("%s%n", "please enter an index to insert a new person at");
+            int index = input.nextInt();
+            
+            Person newPerson = new Person(enterPerson());
+
+            Node oldNode = phoneBook.getIndexNode(index);
+
+            Node newNode = new Node(newPerson, oldNode);
+
+
 
         } else if(inputChar == 'q') {
             quit();
@@ -64,8 +73,8 @@ public class Menu {
 
     public static void main(PhoneBookManager phoneBook){ // main menu runs in while loop
 
-        System.out.printf("%s%n%s%n%s%n%s%n%s", "Please select an option:"
-            , "add a new person (p)", "Search for a person (s)"
+        System.out.printf("%s%n%s%n%s%n%s%n%s%n%s%n%s%n", "Please select an option:"
+            , "add a new person (p)", "add a new person at a given index(i)", "Search for a person (s)"
             , "modify a persons information(m)","print out the full phone book(f)","Quit the program (q)");
 
         Scanner input = new Scanner(System.in);
@@ -78,37 +87,6 @@ public class Menu {
     public static void quit(){
     System.exit(0);
     }
-
-    // public static List<String> menuGenerate(){ // takes lines of user input stores them as strings.
-    //     // then stores them as strings and puts them in a string list. returns list of strings
-
-    //     Scanner input = new Scanner(System.in);
-    //     List<String> WordList = new LinkedList<>();
-
-    //     boolean cont = true;
-
-    //     System.out.printf("%s%n%s%n", "Please enter the words which you would like to be a part of your word search."
-    //         , "After every word press enter. Do not include spaces on. enter nothing to end entries.");
-
-    //     while (cont == true ) {
-
-    //         String currentString = input.nextLine();
-
-    //         if (currentString.isEmpty()) {
-
-    //             cont = false;
-
-    //         } else {
-
-    //             WordList.add(currentString);
-
-    //         }
-
-    //     }
-        
-    //     return WordList;
-
-    // }
 
     public static void printPerson(Person person){
 

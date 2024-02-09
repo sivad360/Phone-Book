@@ -7,11 +7,11 @@ public class Node {
     Node nextNode; // reference to the next node in the linked list 
     
 
-    Node(Person person, Node nexNodeGiven){
+    Node(Person person, Node nextNodeGiven){
 
         this.person = person; // initialize person field for new node
 
-        this.nextNode = nexNodeGiven; // initialize reference to next
+        this.nextNode = nextNodeGiven; // initialize reference to next
         // ListNode if null this is last ListNode in List if value then this
         //ListNode is inserted into List before position of nextListNode
 
