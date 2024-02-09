@@ -1,58 +1,73 @@
-// public class PhoneBookManager {
+public class PhoneBookManager {
 
-//     private ListNode head;
+    private Node head;
 
-//     private ListNode CurrentListNode;
+    public PhoneBookManager(Person person){
 
-//     public PhoneBookManager(ListNode head){
+        this.head = new Node(person, null);
 
-//         this.head = head;
+    }
 
-//     }
-    
-//     public ListNode findLastListNode(int index) {
+
+    public void insertEnd(Person person){
+
+        Node newLastNode = new Node(person, null);
+
+        Node oldLastNode = getLastNode();
+
+        oldLastNode.setNextNode(newLastNode);
+
+    }
+
+    public Person getIndexNode(int index) {
         
-//         CurrentListNode = head;
         
-//     }
-
-//     public void set(int index, ListNode person) {
-
-//     }
-
-//     public void insert(Person, ListNode ListtNodeGiven){
-    
-//     ListNode newNode = new ListNode(firstNameGiven, lastNameGiven, cityGiven
-//     , addressGiven, phoneNumberGiven, ListtNodeGiven);
+    }
 
 
+    public Node getLastNode() {
+        
+        boolean cont = true;
+        Node currentNode = head;
+        Node oldNode = currentNode;
+        while(cont = true) {
+
+            oldNode = currentNode;
+            currentNode = currentNode.getNextNode();
+
+            if (currentNode == null) {
+
+                cont = false;
+
+                return oldNode;
+
+            }
+
+        }
+
+        return null;
+    }
+
+    public Node getFirstNode() {
+        
+        return this.head;
+
+    }
+    public void setCharacteristic(int index, char type, String valueString, int valueint) {
+
+        if( type == 'f'){
+
+        } else if( type == 'l') {
+
+        } else if( type =='c') {
+
+        } else if( type =='a') {
+
+        } else if( type =='p') {
+
+        }
 
 
-//     }
+    }
 
-//     public void insertHead(ListNode person){
-
-//     }
-
-//     public void insertTail(ListNode person){
-
-//     }
-
-//     public void setCharacteristic(int index, char type, String valueString, int valueint) {
-
-//         if( type == 'f'){
-
-//         } else if( type == 'l') {
-
-//         } else if( type =='c') {
-
-//         } else if( type =='a') {
-
-//         } else if( type =='p') {
-
-//         }
-
-
-//     }
-
-// }
+}

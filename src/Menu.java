@@ -2,32 +2,28 @@ import java.util.Scanner;
 
 public class Menu {
 
-    // public static Objects selector(char inputChar, Objects MyObjects) { // method takes in 
-    //     // a char representing the menu selection and an object representing the word search
+    public static void selector(char inputChar,PhoneBookManager phoneBook) { // method takes in 
+        // a char representing the menu selection and an object representing the word search
         
-    //     if (inputChar== 'g' ){ // if 'g' then generate new wordsearch
+        if (inputChar== 'p' ){ // if 'p' then add a new person to phone book
             
-    //         Objects MyObjectsNew = new Objects(menuGenerate()); // call menugenerate and pass
-    //         // the word list to the constructor method.
+           Person newPerson = new Person(enterPerson());
 
-    //         return MyObjectsNew;
+           phoneBook.insertEnd(newPerson);
 
-    //     } else if(inputChar == 'p') { // print formatted word search
+        } else if(inputChar == 's') { // print formatted word search
 
-    //         print(MyObjects, 'm');
+            printPerson(phoneBook.getIndexNode());
 
-    //     } else if(inputChar == 's') { //print formatted solution
+        } else if(inputChar == 's') { //print formatted solution
 
-    //         print(MyObjects,'s');
+            print(MyObjects,'s');
 
-    //     } else if(inputChar == 'q') {
-    //         quit();
-    //     }   
-
+        } else if(inputChar == 'q') {
+            quit();
+        }   
         
-    //     return MyObjects;
-        
-    // }
+    }
 
     public static void welcome () { // welcome menu for opening program
 
@@ -35,18 +31,18 @@ public class Menu {
 
     }
 
-    // public static char main(PhoneBookManager phoneBook){ // main menu runs in while loop
+    public static char main(PhoneBookManager phoneBook){ // main menu runs in while loop
 
-    //     System.out.printf("%s%n%s%n%s%n%s%n%s", "Please select an option:"
-    //         , "add a new person (p)", "Search for a person (s)"
-    //         , "modify a persons information(m)","print out the full phone book(f)","Quit the program (q)");
+        System.out.printf("%s%n%s%n%s%n%s%n%s", "Please select an option:"
+            , "add a new person (p)", "Search for a person (s)"
+            , "modify a persons information(m)","print out the full phone book(f)","Quit the program (q)");
 
-    //     Scanner input = new Scanner(System.in);
-    //     char inputChar = Character.toLowerCase(input.next().charAt(0));
+        Scanner input = new Scanner(System.in);
+        char inputChar = Character.toLowerCase(input.next().charAt(0));
 
-    //     return inputChar;
+        return inputChar;
 
-    // }
+    }
 
     public static void quit(){
     System.exit(0);

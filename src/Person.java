@@ -1,4 +1,6 @@
-public class Person {
+//class to manage and contain variables for a person. A person object will 
+// a Node will contain a Person object as data.
+public class Person { 
     
     private String firstName; 
     private String lastName;

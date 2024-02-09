@@ -1,4 +1,4 @@
-
+// class to define a node of list and 
 
 public class Node {
     
