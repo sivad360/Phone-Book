@@ -4,6 +4,8 @@ public class Menu {
 
     public static void selector(char inputChar,PhoneBookManager phoneBook) { // method takes in 
         // a char representing the menu selection and an object representing the word search
+
+        Scanner input = new Scanner(System.in);
         
         if (inputChar== 'p' ){ // if 'p' then add a new person to phone book
             
@@ -12,6 +14,9 @@ public class Menu {
            phoneBook.insertEnd(newPerson);
 
         } else if(inputChar == 's') { // print formatted word search
+
+            System.out.printf("%s%n", "Please enter the index to search for");
+
 
             printPerson(phoneBook.getIndexNode());
 
