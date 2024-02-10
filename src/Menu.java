@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void selector(char inputChar,PhoneBookManager phoneBook) { // method takes in 
-        // a char representing the menu selection and an object representing the word search
+    public static void selector(char inputChar,PhoneBookManager phoneBook) { 
+        // method takes in a char representing the menu selection and an object 
+        // representing the word search
 
         Scanner input = new Scanner(System.in);
         
@@ -13,7 +14,7 @@ public class Menu {
 
            phoneBook.insertEnd(newPerson);
 
-        } else if(inputChar =='b') {
+        } else if(inputChar =='b') { // add person to beginning of list
             
             Person newPerson = new Person(enterPerson());
 
@@ -25,7 +26,8 @@ public class Menu {
 
         } else if(inputChar == 's') { // print formatted word search
 
-            System.out.printf("%s%n", "Please enter an int representing the index to search for");
+            System.out.printf("%s%n"
+            , "Please enter an int representing the index to search for");
 
             int index = input.nextInt();
 
@@ -33,12 +35,17 @@ public class Menu {
 
         } else if(inputChar == 'm') { // modify a person in the phone book
 
-            System.out.printf("%s%n", "Please enter an int representing the index of person to modify");
+            System.out.printf("%s%n"
+            , "Please enter an int representing the index of person to modify");
 
             int index = input.nextInt();
 
-            System.out.printf("%s%n%s%n%s%n%s%n%s%n", "To modify first name please enter (f)", "To modify last name please enter (l)"
-            , "To modify city please enter (c)", "To modify address please enter (a)", "To modify phone number please enter (n)");
+            System.out.printf("%s%n%s%n%s%n%s%n%s%n"
+            , "To modify first name please enter (f)"
+            , "To modify last name please enter (l)"
+            , "To modify city please enter (c)"
+            , "To modify address please enter (a)"
+            , "To modify phone number please enter (n)");
             input.nextLine();
 
             char inputCharNew = Character.toLowerCase(input.next().charAt(0));
@@ -62,7 +69,8 @@ public class Menu {
 
             while(index <= 0) {
 
-            System.out.printf("%s%n", "please enter an index greater than 0, to insert a new person at");
+            System.out.printf("%s%n"
+            , "please enter an index greater than 0, to insert a new person at");
             index = input.nextInt();
 
             }
@@ -110,9 +118,10 @@ public class Menu {
 
     }
 
-    public static void main(PhoneBookManager phoneBook){ // main menu runs in while loop
+    public static void main(PhoneBookManager phoneBook){ 
 
-        System.out.printf("%s%n%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%n", "Please select an option:"
+        System.out.printf("%s%n%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%n"
+            , "Please select an option:"
             , "add a new person at the end of the phone book (p)"
             ,"add a new person at the beginning of the phone book (b)"
             , "add a new person at a given index (i)", "Search for a person (s)"
@@ -152,7 +161,8 @@ public class Menu {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.printf("%s%n%s%n", "You have chosen to enter a new person", "Please enter the persons first name: ");
+        System.out.printf("%s%n%s%n", "You have chosen to enter a new person"
+        , "Please enter the persons first name: ");
 
         String firstName = input.nextLine();
 
@@ -176,7 +186,8 @@ public class Menu {
 
         String phoneNumber = input.nextLine();
 
-        Person person = new Person(firstName, lastName, city, street, address, phoneNumber);
+        Person person = new Person(firstName, lastName, city, street, address
+        , phoneNumber);
 
         return person;
 

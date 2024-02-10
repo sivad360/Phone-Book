@@ -9,8 +9,8 @@ public class Person {
     private String address;
     private String phoneNumber;
 
-    public Person(String firstNameGiven, String lastNameGiven, String cityGiven, String streetGiven, String addressGiven
-    , String phoneNumberGiven){
+    public Person(String firstNameGiven, String lastNameGiven, String cityGiven
+    , String streetGiven, String addressGiven, String phoneNumberGiven){
 
         this.firstName = firstNameGiven; // initialize characteristics for new node
         this.lastName = lastNameGiven;
@@ -23,7 +23,8 @@ public class Person {
 
     public Person(Person newPerson){
 
-        this.firstName = newPerson.getCharacteristic('f'); // initialize characteristics for new node
+        // initialize characteristics for new node 
+        this.firstName = newPerson.getCharacteristic('f'); 
         this.lastName = newPerson.getCharacteristic('l');
         this.city = newPerson.getCharacteristic('c');
         this.street = newPerson.getCharacteristic('s');
@@ -69,41 +70,49 @@ public class Person {
 
     } // end getCharacteristic()
 
-    public Person setCharacteristic(char type, String value) {
+    public Person setCharacteristic(char type, String value) { // creates new
+        // person with all the same characteristics except one determined by
+        // type to value 
 
-        if( type == 'f'){
+        if( type == 'f'){ // set first name to value
 
-            Person person = new Person(value, this.lastName, this.city, this.street, this.address, this.phoneNumber);
+            Person person = new Person(value, this.lastName, this.city
+            , this.street, this.address, this.phoneNumber);
             
             return person;
 
-        } else if( type == 'l') {
+        } else if( type == 'l') {// set last name to value
 
-            Person person = new Person(this.firstName, value, this.city, this.street, this.address, this.phoneNumber);
+            Person person = new Person(this.firstName, value, this.city
+            , this.street, this.address, this.phoneNumber);
             
             return person;
 
-        } else if( type =='c') {
+        } else if( type =='c') { // set city to value
 
-            Person person = new Person(this.firstName, this.lastName, value, this.street, this.address, this.phoneNumber);
+            Person person = new Person(this.firstName, this.lastName, value
+            , this.street, this.address, this.phoneNumber);
             
             return person;
 
-        } else if( type =='s'){ 
+        } else if( type =='s'){ // set street value
 
-            Person person = new Person(this.firstName, this.lastName, this.city, value, this.address, this.phoneNumber);
+            Person person = new Person(this.firstName, this.lastName, this.city
+            , value, this.address, this.phoneNumber);
             
             return person;
 
-        } else if( type =='a') {
+        } else if( type =='a') { // set address to value
 
-            Person person = new Person(this.firstName, this.lastName, this.city, this.street, value, this.phoneNumber);
+            Person person = new Person(this.firstName, this.lastName, this.city
+            , this.street, value, this.phoneNumber);
             
             return person;
 
-        } else if( type =='p') {
+        } else if( type =='p') { // set phone number to value
 
-            Person person = new Person(this.firstName, this.lastName, this.city, this.street, this.address, value);
+            Person person = new Person(this.firstName, this.lastName, this.city
+            , this.street, this.address, value);
             
             return person;
 
