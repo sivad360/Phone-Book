@@ -37,6 +37,7 @@ public class PhoneBookManager {
     }
 
 
+
     public Node getLastNode() { // returns last node in list
         
         boolean cont = true;

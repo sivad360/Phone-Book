@@ -105,8 +105,24 @@ public class Menu {
                     cont = false;
                 }
             }
- 
-            
+        } else if(inputChar =='d') {
+
+
+
+            System.out.printf("%s%n" // prompt for index
+            , "please enter an index to delete");
+            int index = input.nextInt();
+
+            if(index ==0) {
+
+                phoneBook.setFirstNode(phoneBook.getIndexNode(1));
+
+            } else if( index >0) {
+
+                Node previousNode = phoneBook.getIndexNode(index-1);
+                previousNode.setNextNode(phoneBook.getIndexNode(index+1));
+
+            }
 
         } else if(inputChar == 'q') {
             quit();
@@ -123,12 +139,13 @@ public class Menu {
     public static void main(PhoneBookManager phoneBook){  // prompt for char
         // entry to determine which option
 
-        System.out.printf("%s%n%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%n"
+        System.out.printf("%s%n%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s"
             , "Please select an option:"
             , "add a new person at the end of the phone book (p)"
             ,"add a new person at the beginning of the phone book (b)"
             , "add a new person at a given index (i)", "Search for a person (s)"
             , "modify a persons information (m)","print out the full phone book (f)"
+            , "delete a person at a given index (d)"
             ,"Quit the program (q)");
 
         Scanner input = new Scanner(System.in);
