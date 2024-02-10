@@ -62,6 +62,12 @@ public class PhoneBookManager {
         return this.head;
 
     }
+
+    public void setFirstNode(Node nodeGiven){
+        
+        this.head = nodeGiven;
+        
+    }
     public void setCharacteristic(int index, char type, String valueString, int valueint) {
 
         if( type == 'f'){
