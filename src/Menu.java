@@ -38,9 +38,9 @@ public class Menu {
             System.out.printf("%s%n"
             , "Please enter an int representing the index of person to modify");
 
-            int index = input.nextInt();
+            int index = input.nextInt(); // index represents which node
 
-            System.out.printf("%s%n%s%n%s%n%s%n%s%n"
+            System.out.printf("%s%n%s%n%s%n%s%n%s%n" // prompt for which characteristic
             , "To modify first name please enter (f)"
             , "To modify last name please enter (l)"
             , "To modify city please enter (c)"
@@ -50,26 +50,28 @@ public class Menu {
 
             char inputCharNew = Character.toLowerCase(input.next().charAt(0));
 
-            System.out.print( "please enter a new value: ");
+            System.out.print( "please enter a new value: "); // prompt for value
+            // for characteristic
 
             input.nextLine();
-            String inputString = input.nextLine();
+            String inputString = input.nextLine(); 
                 
             Node node = phoneBook.getIndexNode(index);
 
-            Person person = node.getPerson();
+            Person person = node.getPerson(); // get person out of node
 
             Person newPerson = person.setCharacteristic(inputCharNew,inputString);
+            // set characteristic to value 
             
-            node.setPerson(newPerson);
+            node.setPerson(newPerson); // put modified person back in node
                 
-        } else if(inputChar =='i') {
+        } else if(inputChar =='i') { // new node and person at index
 
             int index = 0;
 
             while(index <= 0) {
 
-            System.out.printf("%s%n"
+            System.out.printf("%s%n" // prompt for index
             , "please enter an index greater than 0, to insert a new person at");
             index = input.nextInt();
 
@@ -87,13 +89,13 @@ public class Menu {
 
             
 
-        } else if(inputChar =='f') {
+        } else if(inputChar =='f') { // print out all persons in phone book
 
             Node newNode = phoneBook.getFirstNode();
 
             boolean cont = true;
             
-            while(cont == true) {
+            while(cont == true) { // loop through all nodes
 
                 printPerson(newNode.getPerson());
                 
@@ -118,7 +120,8 @@ public class Menu {
 
     }
 
-    public static void main(PhoneBookManager phoneBook){ 
+    public static void main(PhoneBookManager phoneBook){  // prompt for char
+        // entry to determine which option
 
         System.out.printf("%s%n%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%n"
             , "Please select an option:"
@@ -139,7 +142,7 @@ public class Menu {
     System.exit(0);
     }
 
-    public static void printPerson(Person person){
+    public static void printPerson(Person person){ // print each characteristic
 
         System.out.println("First Name: " + person.getCharacteristic('f'));
 
@@ -157,7 +160,8 @@ public class Menu {
 
     }
 
-    public static Person enterPerson(){
+    public static Person enterPerson(){ // prompt and store for each person
+        // characteristic
 
         Scanner input = new Scanner(System.in);
 

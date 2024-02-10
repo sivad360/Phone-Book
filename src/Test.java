@@ -8,7 +8,8 @@
 public class Test {
     public static void main(String[] args){
 
-    Person firstPerson = new Person("John","Doe"
+        // three random people to populate phone book
+    Person firstPerson = new Person("John","Doe" 
     ,"Bellingham","Lakeway Dr","1234","123-456-7890");
 
     Person secondPerson = new Person("Jane","Doe"
@@ -18,14 +19,15 @@ public class Test {
     ,"Spokane","1st Ave","9012","123-456-7890");
 
 
-    PhoneBookManager phoneBook = new PhoneBookManager(firstPerson);
+    PhoneBookManager phoneBook = new PhoneBookManager(firstPerson); 
+    // initialize phone book with first person
 
-    phoneBook.insertEnd(secondPerson);
+    phoneBook.insertEnd(secondPerson); // add 2 other people
     phoneBook.insertEnd(thirdPerson);
 
     Menu.welcome();
     
-    while(true) {
+    while(true) { // loop through calling menu each time. 
         Menu.main(phoneBook);
     }
 
