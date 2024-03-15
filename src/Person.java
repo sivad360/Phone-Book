@@ -1,5 +1,11 @@
-//class to manage and contain variables for a person. A person object will 
-// a Node will contain a Person object as data.
+//Name: Davis Tyler
+//Class: CS145
+//Date: 2/7/2024
+//Program: Phone Book
+//File: person
+//references: Lectures, https://www.devglan.com/datastructure/linkedlist-implementation-java
+//purpose: This program creates a linked list which is made up of people The program gives
+// the option to print out, search for, delete, or modify individuals
 public class Person { 
     
     private String firstName; 
