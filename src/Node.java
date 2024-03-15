@@ -2,7 +2,7 @@
 //Class: CS145
 //Date: 2/7/2024
 //Program: Phone Book
-//File: Test
+//File: Node
 //references: Lectures, https://www.devglan.com/datastructure/linkedlist-implementation-java
 //purpose: This program creates a linked list which is made up of people The program gives
 // the option to print out, search for, delete, or modify individuals
